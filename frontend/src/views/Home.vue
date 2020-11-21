@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    3333
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
