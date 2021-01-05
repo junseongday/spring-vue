@@ -1,8 +1,12 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
-    <button @click="getUserInfo">account info</button>
-    <span>{{account}}</span>
+    <form @submit="getUserInfo">
+      <h1>This is an about page</h1>
+      <button type="submit">account info</button>
+      <span>{{account}}</span>
+      <br />
+      <input type="email" v-model="email" required>
+    </form>
   </div>
 </template>
 <script>
@@ -11,14 +15,16 @@ export default {
   name: 'about',
   data () {
     return {
-      account: null
+      account: null,
+      email: null
     }
   },
     methods: {
     ...mapActions({
       fetchAccountInfo: 'account/fetchAccountInfo',
     }),
-    getUserInfo () {
+    getUserInfo (e) {
+      e.preventDefault()
       this.fetchAccountInfo().then(rs => {
         console.log(rs)
         this.account = rs
