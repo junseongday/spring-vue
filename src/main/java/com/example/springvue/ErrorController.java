@@ -14,8 +14,8 @@ public class ErrorController implements org.springframework.boot.web.servlet.err
 
         Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
         HttpStatus httpStatus = HttpStatus.valueOf(Integer.valueOf(status.toString()));
-        System.out.println("httpStatus : "+httpStatus.toString());
-        return "error.html";
+        System.out.println("httpStatus : "+httpStatus.toString() + ":::"+ request);
+        return "index.html";
     }
 
     @Override

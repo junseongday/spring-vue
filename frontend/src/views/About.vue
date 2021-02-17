@@ -6,13 +6,14 @@
       <span>{{account}}</span>
       <br />
       <input type="email" v-model="email" required>
+      <button type="reset" @click="reset">reset</button>
     </form>
   </div>
 </template>
 <script>
 import {mapActions} from 'vuex'
 export default {
-  name: 'about',
+  name: 'About',
   data () {
     return {
       account: null,
@@ -29,6 +30,11 @@ export default {
         console.log(rs)
         this.account = rs
       })
+    },
+    reset () {
+      const vm = this
+      vm.account = null
+      vm.email = null
     }
   }
 }

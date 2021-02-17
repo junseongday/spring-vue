@@ -9,6 +9,17 @@ const fetchAccountInfo = (payload) => {
     return rsp;
   });
 };
+
+const naverLogin = (payload) => {
+  return axios({
+    method: "post",
+    url: "/account/naverlogin",
+    data: payload,
+  }).then((rsp) => {
+    return rsp;
+  });
+}
 export const accountService = {
   fetchAccountInfo,
+  naverLogin
 };

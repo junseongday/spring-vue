@@ -1,11 +1,18 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "../views/Home.vue";
+import Login from "../views/Login.vue";
+import NotFoundComponent from "../views/NotFound.vue";
 
 Vue.use(Router);
 export const router = new Router({
   mode: "history",
   routes: [
+    {
+      path: "*",
+      // name: "error",
+      component: NotFoundComponent
+    },
     {
       path: "/",
       name: "Home",
@@ -18,7 +25,12 @@ export const router = new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "about" */ "../views/About.vue"),
+      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: Login,
     },
   ],
 });

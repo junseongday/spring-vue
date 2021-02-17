@@ -22,4 +22,16 @@ public class AccountController {
         res.add(data);
         return new ResponseEntity<>(res, HttpStatus.OK);
     }
+    //naverlogin
+    @RequestMapping(value = "/naverlogin")
+    public ResponseEntity<?> naverlogin() {
+        HashMap<String, Object> data = new HashMap<>();
+//        data.put("name","junseong");
+
+        System.out.println("@@@@@");
+
+        List<HashMap<String, Object>> res = new ArrayList();
+        res.add(data);
+        return new ResponseEntity<>(res, HttpStatus.OK);
+    }
 }

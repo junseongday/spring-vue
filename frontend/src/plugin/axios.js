@@ -25,7 +25,7 @@ axios.interceptors.response.use(function (response) {
 //  Any status codes that falls outside the range of 2xx cause this function to trigger
 //  Do something with response error
   const status = error.response ? error.response.status : null
-  // console.log(28, '에러일 경우', 'status', status)
+  console.log(28, '에러일 경우', 'status', status)
   if (status === 401) {
     router.push('/login')
   } else {
